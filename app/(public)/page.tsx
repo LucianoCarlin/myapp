@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-export default function Citys() {
+export default function states() {
   return (
     <Box>
-      <Typography>Cidades</Typography>
+      <Typography>Estados</Typography>
     </Box>
   );
 }
