@@ -7,7 +7,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export default function ThemeProviderCuston({ children }: ThemeProviderProps) {
+export default function ThemeProviderCustom({ children }: ThemeProviderProps) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

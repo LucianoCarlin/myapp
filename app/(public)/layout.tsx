@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeProviderCuston from "../contexts/CreateTheme";
+import ThemeProviderCustom from "../contexts/CreateTheme";
 import "../globals.css";
 import type { Metadata } from "next";
 
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <ThemeProviderCuston>{children}</ThemeProviderCuston>
+        <ThemeProviderCustom>{children}</ThemeProviderCustom>
       </body>
     </html>
   );
