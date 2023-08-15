@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { Grid } from "@mui/material";
+import React, { ReactNode } from 'react';
+import { Grid } from '@mui/material';
 
 interface GridContainerProps {
   children: ReactNode;
@@ -7,7 +7,7 @@ interface GridContainerProps {
 
 export function GridContainer({ children }: GridContainerProps) {
   return (
-    <Grid container spacing={4} border="solid 1px red">
+    <Grid container spacing={2}>
       {children}
     </Grid>
   );

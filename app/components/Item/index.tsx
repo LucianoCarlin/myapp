@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { ReactNode } from "react";
-import { Paper } from "@mui/material";
+import React, { ReactNode } from 'react';
+import { Paper } from '@mui/material';
 
 interface ItemProps {
   children: ReactNode;
@@ -10,12 +10,12 @@ interface ItemProps {
 export function Item({ children }: ItemProps) {
   return (
     <Paper
-      elevation={8}
+      elevation={12}
+      className="text-gray-50 bg-slate-800"
       sx={{
-        backgroundColor: "#1A2027",
-        padding: 1,
-        textAlign: "center",
-        color: "secondary",
+        paddingX: 2,
+        textAlign: 'center',
+        paddingY: 4,
       }}
     >
       {children}
