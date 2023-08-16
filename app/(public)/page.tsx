@@ -1,14 +1,14 @@
-import React from 'react';
-import { Box } from '@mui/material';
-import { GridContainer } from '../components/Grid/GridContainer';
-import { GridItem } from '../components/Grid/GridItem';
-import { Item } from '../components/Item';
-import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
-import { WButton } from '../components/Button';
+import React from "react";
+import { Box } from "@mui/material";
+import { GridContainer } from "../components/Grid/GridContainer";
+import { GridItem } from "../components/Grid/GridItem";
+import { Item } from "../components/Item";
+import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import { WButton } from "../components/Button";
 
 export default function states() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, padding: 4 }}>
       <GridContainer>
         <GridItem md={1}>
           <Item>Grid 1</Item>
@@ -49,8 +49,71 @@ export default function states() {
         <GridItem md={12}>
           <Item>Grid 12</Item>
         </GridItem>
-        <GridItem md={12}>
-          <WButton textButton="Contained" />
+        <GridItem md={2}>
+          <WButton textButton="Contained error" color="error" fullWidth />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton textButton="Contained success" color="success" fullWidth />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton textButton="Contained warning" color="warning" fullWidth />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton textButton="Contained gray" color="inherit" fullWidth />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton textButton="Contained info" color="info" fullWidth />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton textButton="Contained primary" color="primary" fullWidth />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton
+            variant="outlined"
+            textButton="outlined error"
+            color="error"
+            fullWidth
+          />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton
+            variant="outlined"
+            textButton="outlined success"
+            color="success"
+            fullWidth
+          />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton
+            variant="outlined"
+            textButton="outlined warning"
+            color="warning"
+            fullWidth
+          />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton
+            variant="outlined"
+            textButton="outlined gray"
+            color="inherit"
+            fullWidth
+          />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton
+            variant="outlined"
+            textButton="outlined info"
+            color="info"
+            fullWidth
+          />
+        </GridItem>
+        <GridItem md={2}>
+          <WButton
+            variant="outlined"
+            textButton="outlined primary"
+            color="primary"
+            fullWidth
+          />
         </GridItem>
       </GridContainer>
     </Box>
