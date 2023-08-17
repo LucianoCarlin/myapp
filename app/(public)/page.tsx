@@ -1,10 +1,11 @@
-import React from "react";
-import { Box } from "@mui/material";
-import { GridContainer } from "../components/Grid/GridContainer";
-import { GridItem } from "../components/Grid/GridItem";
-import { Item } from "../components/Item";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { WButton } from "../components/Button";
+import React from 'react';
+import { Box } from '@mui/material';
+import { GridContainer } from '../components/Grid/GridContainer';
+import { GridItem } from '../components/Grid/GridItem';
+import { Item } from '../components/Item';
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import { WButton } from '../components/Button';
+import { WInput } from '../components/Input/Winput';
 
 export default function states() {
   return (
@@ -114,6 +115,15 @@ export default function states() {
             color="primary"
             fullWidth
           />
+        </GridItem>
+        <GridItem md={4}>
+          <WInput label="outlined" />
+        </GridItem>
+        <GridItem md={4}>
+          <WInput variant="filled" label="filled" />
+        </GridItem>
+        <GridItem md={4}>
+          <WInput variant="standard" label="standard" />
         </GridItem>
       </GridContainer>
     </Box>
