@@ -1,5 +1,5 @@
-'use client';
-import React, { MouseEvent, useState } from 'react';
+"use client";
+import React, { MouseEvent, useState } from "react";
 import {
   FormControl,
   IconButton,
@@ -7,21 +7,21 @@ import {
   InputLabel,
   OutlinedInput,
   TextFieldVariants,
-} from '@mui/material';
-import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
+} from "@mui/material";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 interface WInputPasswordProps<
   Variant extends TextFieldVariants = TextFieldVariants
 > {
   variant?: Variant;
   label: string;
-  size?: 'small' | 'medium';
+  size?: "small" | "medium";
 }
 
 export function WInputPassword({
   label,
-  size = 'small',
-  variant = 'outlined',
+  size = "small",
+  variant = "outlined",
   ...rest
 }: WInputPasswordProps) {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,12 +31,12 @@ export function WInputPassword({
   };
 
   return (
-    <FormControl sx={{ m: 1, width: '25ch' }} variant={variant}>
+    <FormControl fullWidth variant={variant} color="secondary" size={size}>
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
         {...rest}
         id="outlined-adornment-password"
-        type={showPassword ? 'text' : 'password'}
+        type={showPassword ? "text" : "password"}
         endAdornment={
           <InputAdornment position="end">
             <IconButton

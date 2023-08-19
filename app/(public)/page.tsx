@@ -1,15 +1,18 @@
-import React from 'react';
-import { Box } from '@mui/material';
-import { GridContainer } from '../components/Grid/GridContainer';
-import { GridItem } from '../components/Grid/GridItem';
-import { Item } from '../components/Item';
-import { WButton } from '../components/Button';
-import { WInput } from '../components/Input/WInput';
+import React from "react";
+import { Box } from "@mui/material";
+import { GridContainer } from "../components/Grid/GridContainer";
+import { GridItem } from "../components/Grid/GridItem";
+import { Item } from "../components/Item";
+import { WButton } from "../components/Button";
+import { WInput } from "../components/Input/WInput";
+import { WInputPassword } from "../components/Input/WInputPassword";
+import { WInputIcon } from "../components/Input/WInputIcon";
+import { IoMdHome } from "react-icons/io";
 
 export default function states() {
   return (
     <Box sx={{ flexGrow: 1, padding: 4 }}>
-      <GridContainer>
+      <GridContainer sx={{ mb: "1rem" }}>
         <GridItem md={1}>
           <Item>Grid 1</Item>
         </GridItem>
@@ -49,6 +52,8 @@ export default function states() {
         <GridItem md={12}>
           <Item>Grid 12</Item>
         </GridItem>
+      </GridContainer>
+      <GridContainer sx={{ mb: "1rem" }}>
         <GridItem md={2}>
           <WButton textButton="Contained error" color="error" fullWidth />
         </GridItem>
@@ -115,6 +120,8 @@ export default function states() {
             fullWidth
           />
         </GridItem>
+      </GridContainer>
+      <GridContainer sx={{ mb: "1rem" }}>
         <GridItem md={4}>
           <WInput label="outlined" />
         </GridItem>
@@ -132,6 +139,14 @@ export default function states() {
         </GridItem>
         <GridItem md={4}>
           <WInput variant="standard" size="medium" label="standard" />
+        </GridItem>
+      </GridContainer>
+      <GridContainer>
+        <GridItem md={4}>
+          <WInputPassword label="Password" />
+        </GridItem>
+        <GridItem md={4}>
+          <WInputIcon label="Icon" icon={<IoMdHome />} position="end" />
         </GridItem>
       </GridContainer>
     </Box>
