@@ -2,55 +2,59 @@ import React from "react";
 import { Box } from "@mui/material";
 import { GridContainer } from "../components/Grid/GridContainer";
 import { GridItem } from "../components/Grid/GridItem";
-import { Item } from "../components/Item";
+import { WPaper } from "../components/Paper";
 import { WButton } from "../components/Button";
 import { WInput } from "../components/Input/WInput";
 import { WInputPassword } from "../components/Input/WInputPassword";
 import { WInputIcon } from "../components/Input/WInputIcon";
 import { IoMdHome } from "react-icons/io";
+import { WInputMask } from "../components/Input/WInputMask";
+import { WInputCurrency } from "../components/Input/WInputCurrency";
+import { WInputDecimal } from "../components/Input/WInputDecimal";
+import { WInputPercent } from "../components/Input/WInputPercent";
 
 export default function states() {
   return (
     <Box sx={{ flexGrow: 1, padding: 4 }}>
       <GridContainer sx={{ mb: "1rem" }}>
         <GridItem md={1}>
-          <Item>Grid 1</Item>
+          <WPaper typePaper="dark">Grid 1</WPaper>
         </GridItem>
         <GridItem md={2}>
-          <Item>Grid 2</Item>
+          <WPaper typePaper="dark">Grid 2</WPaper>
         </GridItem>
         <GridItem md={3}>
-          <Item>Grid 3</Item>
+          <WPaper typePaper="dark">Grid 3</WPaper>
         </GridItem>
         <GridItem md={4}>
-          <Item>Grid 4</Item>
+          <WPaper typePaper="dark">Grid 4</WPaper>
         </GridItem>
         <GridItem md={2}>
-          <Item>Grid 2</Item>
+          <WPaper typePaper="dark">Grid 2</WPaper>
         </GridItem>
         <GridItem md={5}>
-          <Item>Grid 5</Item>
+          <WPaper typePaper="dark">Grid 5</WPaper>
         </GridItem>
         <GridItem md={6}>
-          <Item>Grid 6</Item>
+          <WPaper typePaper="dark">Grid 6</WPaper>
         </GridItem>
         <GridItem md={7}>
-          <Item>Grid 7</Item>
+          <WPaper typePaper="dark">Grid 7</WPaper>
         </GridItem>
         <GridItem md={8}>
-          <Item>Grid 8</Item>
+          <WPaper typePaper="dark">Grid 8</WPaper>
         </GridItem>
         <GridItem md={9}>
-          <Item>Grid 9</Item>
+          <WPaper typePaper="dark">Grid 9</WPaper>
         </GridItem>
         <GridItem md={10}>
-          <Item>Grid 10</Item>
+          <WPaper typePaper="dark">Grid 10</WPaper>
         </GridItem>
         <GridItem md={11}>
-          <Item>Grid 11</Item>
+          <WPaper typePaper="dark">Grid 11</WPaper>
         </GridItem>
         <GridItem md={12}>
-          <Item>Grid 12</Item>
+          <WPaper typePaper="dark">Grid 12</WPaper>
         </GridItem>
       </GridContainer>
       <GridContainer sx={{ mb: "1rem" }}>
@@ -141,12 +145,48 @@ export default function states() {
           <WInput variant="standard" size="medium" label="standard" />
         </GridItem>
       </GridContainer>
-      <GridContainer>
+      <GridContainer sx={{ mb: "1rem" }}>
         <GridItem md={4}>
           <WInputPassword label="Password" />
         </GridItem>
         <GridItem md={4}>
           <WInputIcon label="Icon" icon={<IoMdHome />} position="end" />
+        </GridItem>
+      </GridContainer>
+      <GridContainer sx={{ mb: "1rem" }}>
+        <GridItem md={3}>
+          <WInputMask label="cfp" typeInput="cpf" />
+        </GridItem>
+        <GridItem md={3}>
+          <WInputMask label="cnpj" typeInput="cnpj" />
+        </GridItem>
+        <GridItem md={3}>
+          <WInputMask label="cep" typeInput="cep" />
+        </GridItem>
+        <GridItem md={3}>
+          <WInputMask label="phone" typeInput="phone" />
+        </GridItem>
+      </GridContainer>
+      <GridContainer sx={{ mb: "1rem" }}>
+        <GridItem md={3}>
+          <WInputCurrency label="currency" prefix="R$" decimalScale={2} />
+        </GridItem>
+        <GridItem md={3}>
+          <WInputDecimal
+            label="decimal"
+            decimalScale={2}
+            decimalSeparator=","
+          />
+        </GridItem>
+        <GridItem md={3}>
+          <WInputPercent label="percent" decimalScale={2} />
+        </GridItem>
+        <GridItem md={3}>
+          <WInputDecimal
+            label="decimal"
+            decimalScale={3}
+            decimalSeparator="."
+          />
         </GridItem>
       </GridContainer>
     </Box>
