@@ -169,7 +169,7 @@ export default function states() {
       </GridContainer>
       <GridContainer sx={{ mb: "1rem" }}>
         <GridItem md={3}>
-          <WInputCurrency label="currency" prefix="R$" decimalScale={2} />
+          <WInputCurrency label="currency" prefix="R$ " decimalScale={2} />
         </GridItem>
         <GridItem md={3}>
           <WInputDecimal

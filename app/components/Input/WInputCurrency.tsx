@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import { TextField, TextFieldProps, TextFieldVariants } from "@mui/material";
-import { NumericFormat } from "react-number-format";
+import React, { FormEvent } from "react";
+import { TextField, TextFieldVariants } from "@mui/material";
 
 interface WInputCurrencyProps<
   Variant extends TextFieldVariants = TextFieldVariants
@@ -9,27 +8,53 @@ interface WInputCurrencyProps<
   variant?: Variant;
   label: string;
   prefix: string;
-  decimalScale: number;
 }
 
 export function WInputCurrency({
   variant,
   label,
   prefix,
-  decimalScale,
   ...rest
 }: WInputCurrencyProps) {
+  const handleChange = (e: FormEvent<HTMLInputElement>) => {
+    const value = currency(e);
+    e.currentTarget.value = value;
+  };
+
+  function currency(e: FormEvent<HTMLInputElement>) {
+    if (e.currentTarget.value) {
+      let value = e.currentTarget.value;
+      value = value.replace(/\D/g, "");
+      const intValue = parseInt(value, 10);
+
+      value = (intValue / 100).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+
+      return value;
+    } else {
+      return "";
+    }
+  }
+
   return (
-    <NumericFormat
-      customInput={TextField}
+    <TextField
       fullWidth
       variant={variant}
       label={label}
       color="secondary"
-      prefix={prefix}
-      decimalScale={decimalScale}
-      allowNegative={false}
+      onChangeCapture={handleChange}
+      InputProps={{
+        inputComponent: CustomCurrencyFormat,
+      }}
       {...rest}
     />
   );
+}
+
+function CustomCurrencyFormat(props: any) {
+  return <input {...props} />;
 }
