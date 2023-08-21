@@ -1,8 +1,7 @@
 'use client';
 import React from 'react';
 import { Button, ButtonProps } from '@mui/material';
-
-interface WButtonProps extends ButtonProps {
+export interface WButtonProps extends ButtonProps {
   variant?: 'contained' | 'outlined' | 'text';
   textButton: string;
   color:
