@@ -1,22 +1,22 @@
-import React from "react";
-import { Box } from "@mui/material";
-import { GridContainer } from "../components/Grid/GridContainer";
-import { GridItem } from "../components/Grid/GridItem";
-import { WPaper } from "../components/Paper";
-import { WButton } from "../components/Button";
-import { WInput } from "../components/Input/WInput";
-import { WInputPassword } from "../components/Input/WInputPassword";
-import { WInputIcon } from "../components/Input/WInputIcon";
-import { IoMdHome } from "react-icons/io";
-import { WInputMask } from "../components/Input/WInputMask";
-import { WInputCurrency } from "../components/Input/WInputCurrency";
-import { WInputDecimal } from "../components/Input/WInputDecimal";
-import { WInputPercent } from "../components/Input/WInputPercent";
+import React from 'react';
+import { Box } from '@mui/material';
+import { GridContainer } from '../components/Grid/GridContainer';
+import { GridItem } from '../components/Grid/GridItem';
+import { WPaper } from '../components/Paper';
+import { WButton } from '../components/Button';
+import { WInput } from '../components/Input/WInput';
+import { WInputPassword } from '../components/Input/WInputPassword';
+import { WInputIcon } from '../components/Input/WInputIcon';
+import { IoMdHome } from 'react-icons/io';
+import { WInputMask } from '../components/Input/WInputMask';
+import { WInputCurrency } from '../components/Input/WInputCurrency';
+import { WInputDecimal } from '../components/Input/WInputDecimal';
+import { WInputPercent } from '../components/Input/WInputPercent';
 
 export default function states() {
   return (
     <Box sx={{ flexGrow: 1, padding: 4 }}>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={1}>
           <WPaper typePaper="dark">Grid 1</WPaper>
         </GridItem>
@@ -57,7 +57,7 @@ export default function states() {
           <WPaper typePaper="dark">Grid 12</WPaper>
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={2}>
           <WButton textButton="Contained error" color="error" fullWidth />
         </GridItem>
@@ -125,7 +125,7 @@ export default function states() {
           />
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={4}>
           <WInput label="outlined" />
         </GridItem>
@@ -145,7 +145,7 @@ export default function states() {
           <WInput variant="standard" size="medium" label="standard" />
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={4}>
           <WInputPassword label="Password" />
         </GridItem>
@@ -153,7 +153,7 @@ export default function states() {
           <WInputIcon label="Icon" icon={<IoMdHome />} position="end" />
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={3}>
           <WInputMask label="cfp" typeInput="cpf" />
         </GridItem>
@@ -167,26 +167,15 @@ export default function states() {
           <WInputMask label="phone" typeInput="phone" />
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
-        <GridItem md={3}>
-          <WInputCurrency label="currency" prefix="R$ " decimalScale={2} />
+      <GridContainer sx={{ mb: '1rem' }}>
+        <GridItem md={4}>
+          <WInputCurrency label="currency" />
         </GridItem>
-        <GridItem md={3}>
-          <WInputDecimal
-            label="decimal"
-            decimalScale={2}
-            decimalSeparator=","
-          />
+        <GridItem md={4}>
+          <WInputDecimal label="decimal" />
         </GridItem>
-        <GridItem md={3}>
+        <GridItem md={4}>
           <WInputPercent label="percent" decimalScale={2} />
-        </GridItem>
-        <GridItem md={3}>
-          <WInputDecimal
-            label="decimal"
-            decimalScale={3}
-            decimalSeparator="."
-          />
         </GridItem>
       </GridContainer>
     </Box>

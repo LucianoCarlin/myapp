@@ -1,42 +1,47 @@
-"use client";
-import React, { FormEvent } from "react";
-import { TextField, TextFieldVariants } from "@mui/material";
+'use client';
+import React, { useState, ChangeEvent } from 'react';
+import { TextField, TextFieldVariants } from '@mui/material';
 
 interface WInputCurrencyProps<
   Variant extends TextFieldVariants = TextFieldVariants
 > {
   variant?: Variant;
   label: string;
-  prefix: string;
+  size?: 'small' | 'medium';
+}
+
+function CustomCurrencyFormat(props: any) {
+  return <input {...props} />;
 }
 
 export function WInputCurrency({
   variant,
   label,
-  prefix,
+  size = 'small',
   ...rest
 }: WInputCurrencyProps) {
-  const handleChange = (e: FormEvent<HTMLInputElement>) => {
-    const value = currency(e);
-    e.currentTarget.value = value;
+  const [formattedValue, setFormattedValue] = useState('');
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = currency(e.target.value);
+    setFormattedValue(value);
   };
 
-  function currency(e: FormEvent<HTMLInputElement>) {
-    if (e.currentTarget.value) {
-      let value = e.currentTarget.value;
-      value = value.replace(/\D/g, "");
+  function currency(value: string) {
+    if (value) {
+      value = value.replace(/\D/g, '');
       const intValue = parseInt(value, 10);
 
-      value = (intValue / 100).toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
+      value = (intValue / 100).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       });
 
       return value;
     } else {
-      return "";
+      return '';
     }
   }
 
@@ -45,16 +50,14 @@ export function WInputCurrency({
       fullWidth
       variant={variant}
       label={label}
+      size={size}
       color="secondary"
-      onChangeCapture={handleChange}
+      value={formattedValue}
+      onChange={handleChange}
       InputProps={{
         inputComponent: CustomCurrencyFormat,
       }}
       {...rest}
     />
   );
-}
-
-function CustomCurrencyFormat(props: any) {
-  return <input {...props} />;
 }
