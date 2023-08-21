@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React, { ReactNode } from "react";
-import { Paper, PaperProps } from "@mui/material";
+import React, { ReactNode } from 'react';
+import { Paper, PaperProps } from '@mui/material';
 
-interface WPaperProps extends PaperProps {
+export interface WPaperProps extends PaperProps {
   children: ReactNode;
   elevation?: number;
-  typePaper: "dark" | "white";
+  typePaper: 'dark' | 'white';
 }
 
 export function WPaper({
@@ -15,11 +15,11 @@ export function WPaper({
   children,
   ...rest
 }: WPaperProps) {
-  let colorClass = "";
-  if (typePaper === "dark") {
-    colorClass = "text-gray-50 bg-slate-600";
+  let colorClass = '';
+  if (typePaper === 'dark') {
+    colorClass = 'text-gray-50 bg-slate-600';
   } else {
-    colorClass = "bg-gray-600 bg-slate-100";
+    colorClass = 'bg-gray-600 bg-slate-100';
   }
   return (
     <Paper elevation={elevation} className={colorClass} {...rest}>
