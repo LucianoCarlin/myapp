@@ -72,7 +72,11 @@ export default function states() {
           <WButton textButton="Contained warning" color="warning" fullWidth />
         </GridItem>
         <GridItem md={2}>
-          <WButton textButton="Contained gray" color="inherit" fullWidth />
+          <WButton
+            textButton="Contained secondary"
+            color="secondary"
+            fullWidth
+          />
         </GridItem>
         <GridItem md={2}>
           <WButton textButton="Contained info" color="info" fullWidth />
@@ -107,8 +111,8 @@ export default function states() {
         <GridItem md={2}>
           <WButton
             variant="outlined"
-            textButton="outlined gray"
-            color="inherit"
+            textButton="outlined secondary"
+            color="secondary"
             fullWidth
           />
         </GridItem>
