@@ -8,8 +8,7 @@ import {
   OutlinedInput,
   TextFieldVariants,
 } from "@mui/material";
-import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 interface WInputPasswordProps<
   Variant extends TextFieldVariants = TextFieldVariants
 > {
@@ -45,7 +44,7 @@ export function WInputPassword({
               onMouseDown={handleMouseDownPassword}
               edge="end"
             >
-              {showPassword ? <IoMdEye /> : <IoMdEyeOff />}
+              {showPassword ? <Visibility /> : <VisibilityOff />}
             </IconButton>
           </InputAdornment>
         }
