@@ -2,10 +2,10 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-export default function Dash() {
+export default function Supplier() {
   return (
     <Box>
-      <Typography>Dash</Typography>
+      <Typography>Fornecedor</Typography>
     </Box>
   );
 }

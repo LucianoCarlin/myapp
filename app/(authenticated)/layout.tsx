@@ -28,9 +28,9 @@ export const metadata = {
 const DRAWER_WIDTH = 240;
 
 const LINKS = [
-  { text: "Home", href: "/", icon: HomeIcon },
-  { text: "Starred", href: "/starred", icon: StarIcon },
-  { text: "Tasks", href: "/tasks", icon: ChecklistIcon },
+  { text: "Dashboard", href: "/", icon: HomeIcon },
+  { text: "Cliente", href: "/person/client", icon: StarIcon },
+  { text: "Fornecedor", href: "/person/supplier", icon: ChecklistIcon },
 ];
 
 const PLACEHOLDER_LINKS = [
