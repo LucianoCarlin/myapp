@@ -112,23 +112,12 @@ export default function SignIn() {
       </Box>
       <Box>
         <Typography>Windel Sistemas 1.0.0.0</Typography>
-
         <Box flexDirection="row" alignItems="center">
-          <Typography color="gray.500" mr="0.2rem">
-            Feito com
-          </Typography>
-
+          <Typography>Feito com</Typography>
           <Favorite color="error" />
-
-          <Typography color="gray.500" ml="0.2rem" mr="0.2rem">
-            e muito
-          </Typography>
-
+          <Typography>e muito</Typography>
           <Coffee color="primary" />
-
-          <Typography color="gray.500" ml="0.2rem">
-            pela Windel Sistemas
-          </Typography>
+          <Typography>pela Windel Sistemas</Typography>
         </Box>
       </Box>
     </Container>
