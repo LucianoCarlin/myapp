@@ -10,8 +10,11 @@ import { WInput } from '../components/Input/WInput';
 import { WInputPassword } from '../components/Input/WInputPassword';
 import { GridContainer } from '../components/Grid/GridContainer';
 import { GridItem } from '../components/Grid/GridItem';
+import { useRouter } from 'next/navigation';
+import { AuthCookie } from '../components/Auth/Auth.Cookie';
 
 export default function SignIn() {
+  const router = useRouter();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -28,7 +31,7 @@ export default function SignIn() {
         component="form"
         onSubmit={handleSubmit}
         noValidate
-        sx={{ mt: '5rem' }}
+        sx={{ mt: '6rem' }}
       >
         <GridContainer>
           <GridItem sm={12} md={12}>
@@ -43,10 +46,12 @@ export default function SignIn() {
           fullWidth
           textButton="Acessar"
           sx={{ mt: 2, mb: 2 }}
+          onClick={() => router.push('/dashboard')}
         />
         <AuthLinks />
       </Box>
       <AuthCopyright />
+      <AuthCookie />
     </AuthContainer>
   );
 }

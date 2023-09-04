@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Link } from '@mui/material';
 import { GridContainer } from '../Grid/GridContainer';
@@ -6,7 +7,7 @@ import { GridItem } from '../Grid/GridItem';
 export function AuthLinks() {
   return (
     <GridContainer>
-      <GridItem md={12} sx={{ pt: 0 }}>
+      <GridItem sm={12} md={12} sx={{ pt: 0 }}>
         <Link
           href="/auth/forgotPassword"
           variant="body2"
@@ -21,7 +22,7 @@ export function AuthLinks() {
           Esqueceu sua senha?
         </Link>
       </GridItem>
-      <GridItem md={12} sx={{ pt: '0.1rem !important' }}>
+      <GridItem sm={12} md={12} sx={{ pt: '0.1rem !important' }}>
         <Link
           href="/auth/register"
           variant="body2"

@@ -10,7 +10,7 @@ export function AuthHeader() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: { xs: '5rem', sm: '5rem', md: '6rem' },
+        marginTop: { xs: '5rem', sm: '5rem', md: '8rem' },
       }}
     >
       <Image src="/logo/logoW.svg" alt="Logo Windel" width={300} height={120} />
