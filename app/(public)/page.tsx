@@ -13,33 +13,30 @@ import { WInputPassword } from '../components/Input/WInputPassword';
 import { GridContainer } from '../components/Grid/GridContainer';
 import { GridItem } from '../components/Grid/GridItem';
 import { AuthCookie } from '../components/Auth/Auth.Cookie';
-import { signInSchema } from '../schemas/Auth/Schema.SignIn';
 import { WLoadingButton } from '../components/Button/Button.Loading';
-
-interface SignInProps {
-  email: string;
-  password: string;
-}
+import { signInSchema } from '../schemas/Auth/Schema.SignIn';
+import { SignInProps } from '../interface/interface.SignIn';
+import { useRouter } from 'next/navigation';
 
 export default function SignIn() {
-  const [loading, setLoading] = React.useState(false);
+  const router = useRouter();
   const {
     register,
     handleSubmit,
-    formState,
+    reset,
     formState: { errors },
   } = useForm<SignInProps>({
     resolver: yupResolver(signInSchema),
   });
 
   const handleSignIn: SubmitHandler<SignInProps> = async (values) => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    router.push('/dashboard');
+    /* setTimeout(() => {
       console.log(values);
-    }, 5000);
+      reset();
+    }, 5000); */
   };
-  console.log(errors);
+
   return (
     <AuthContainer>
       <AuthHeader />
@@ -68,7 +65,6 @@ export default function SignIn() {
           </GridItem>
         </GridContainer>
         <WLoadingButton
-          loading={loading}
           position="end"
           color="primary"
           fullWidth

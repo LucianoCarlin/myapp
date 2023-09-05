@@ -1,11 +1,15 @@
-"use client";
-import React from "react";
-import { Box, Typography } from "@mui/material";
+'use client';
+import React, { Suspense } from 'react';
+import { Box, Typography } from '@mui/material';
+import { Repo } from '@/app/components/Pages/Dashboard';
 
 export default function Client() {
   return (
-    <Box>
-      <Typography>Cliente</Typography>
-    </Box>
+    <Suspense fallback={'loading cliente'}>
+      <Box>
+        <Typography>Dash</Typography>
+        <Repo />
+      </Box>
+    </Suspense>
   );
 }
