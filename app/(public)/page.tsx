@@ -16,10 +16,9 @@ import { AuthCookie } from '../components/Auth/Auth.Cookie';
 import { WLoadingButton } from '../components/Button/Button.Loading';
 import { signInSchema } from '../schemas/Auth/Schema.SignIn';
 import { SignInProps } from '../interface/interface.SignIn';
-import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 export default function SignIn() {
-  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -30,11 +29,12 @@ export default function SignIn() {
   });
 
   const handleSignIn: SubmitHandler<SignInProps> = async (values) => {
-    router.push('/dashboard');
-    /* setTimeout(() => {
-      console.log(values);
-      reset();
-    }, 5000); */
+    const response = await axios.post('http://192.168.1.238:3333/auth/login/', {
+      username: values.email,
+      password: values.password,
+    });
+    console.log(response.data, 'data');
+    //router.push('/dashboard');
   };
 
   return (
