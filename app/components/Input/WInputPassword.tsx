@@ -1,51 +1,40 @@
-"use client";
-import React, { MouseEvent, useState } from "react";
+'use client';
+import React, {
+  ForwardRefRenderFunction,
+  MouseEvent,
+  forwardRef,
+  useState,
+} from 'react';
 import {
   FormControl,
+  FormHelperText,
   IconButton,
   InputAdornment,
   InputLabel,
   OutlinedInput,
-  TextFieldVariants,
-} from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { useFormContext } from "react-hook-form";
-interface WInputPasswordProps<
-  Variant extends TextFieldVariants = TextFieldVariants
-> {
-  variant?: Variant;
-  label: string;
-  name: string;
-  size?: "small" | "medium";
-  defaultValue?: string;
-}
+} from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { WInputProps } from '@/app/interface/InterfaceButton';
+import { red } from '@mui/material/colors';
 
-export function WInputPassword({
-  label,
-  name,
-  size = "small",
-  variant = "outlined",
-  defaultValue,
-  ...rest
-}: WInputPasswordProps) {
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, WInputProps> = (
+  { name, label, error, size = 'small', variant = 'outlined', ...rest },
+  ref
+) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
-
-  const {
-    control,
-    formState: { errors },
-  } = useFormContext();
-
   return (
     <FormControl fullWidth variant={variant} color="secondary" size={size}>
-      <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
+      <InputLabel htmlFor={name} color={!!error ? 'error' : 'secondary'}>
+        {label}
+      </InputLabel>
       <OutlinedInput
         {...rest}
-        id="outlined-adornment-password"
-        type={showPassword ? "text" : "password"}
+        id={name}
+        type={showPassword ? 'text' : 'password'}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
@@ -59,10 +48,18 @@ export function WInputPassword({
           </InputAdornment>
         }
         label={label}
-        defaultValue={defaultValue}
-        error={!!errors[name]?.message}
-        //helperText={errors[name]?.message && <>{errors[name]?.message}</>}
+        name={name}
+        color={!!error ? 'error' : 'secondary'}
+        error={!!error}
+        ref={ref}
       />
+      {!!error && (
+        <FormHelperText sx={{ color: red[700] }}>
+          {error.message}
+        </FormHelperText>
+      )}
     </FormControl>
   );
-}
+};
+
+export const WInputPassword = forwardRef(InputBase);

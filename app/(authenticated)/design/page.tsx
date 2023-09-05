@@ -1,18 +1,19 @@
-import React from "react";
-import { Box } from "@mui/material";
-import { GridContainer } from "../../components/Grid/GridContainer";
-import { GridItem } from "../../components/Grid/GridItem";
-import { WPaper } from "../../components/Paper";
-import { WButton } from "../../components/Button";
-import { WInput } from "../../components/Input/WInput";
-import { WInputPassword } from "../../components/Input/WInputPassword";
-import { WInputIcon } from "../../components/Input/WInputIcon";
-import { WInputMask } from "../../components/Input/WInputMask";
-import { WInputCurrency } from "../../components/Input/WInputCurrency";
-import { WInputDecimal } from "../../components/Input/WInputDecimal";
-import { WInputPercent } from "../../components/Input/WInputPercent";
-import { Home } from "@mui/icons-material";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import { Box } from '@mui/material';
+import { GridContainer } from '../../components/Grid/GridContainer';
+import { GridItem } from '../../components/Grid/GridItem';
+import { WPaper } from '../../components/Paper';
+import { WButton } from '../../components/Button';
+import { WInput } from '../../components/Input/WInput';
+import { WInputPassword } from '../../components/Input/WInputPassword';
+import { WInputIcon } from '../../components/Input/WInputIcon';
+import { WInputMask } from '../../components/Input/WInputMask';
+import { WInputCurrency } from '../../components/Input/WInputCurrency';
+import { WInputDecimal } from '../../components/Input/WInputDecimal';
+import { WInputPercent } from '../../components/Input/WInputPercent';
+import { Home } from '@mui/icons-material';
+import Link from 'next/link';
 
 export default function states() {
   return (
@@ -20,7 +21,7 @@ export default function states() {
       <Link href="/dashboard" passHref>
         Ir para dash
       </Link>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={1}>
           <WPaper typePaper="dark">Grid 1</WPaper>
         </GridItem>
@@ -61,7 +62,7 @@ export default function states() {
           <WPaper typePaper="dark">Grid 12</WPaper>
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={2}>
           <WButton textButton="Contained error" color="error" fullWidth />
         </GridItem>
@@ -133,35 +134,40 @@ export default function states() {
           />
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={4}>
-          <WInput label="outlined" />
+          <WInput name="teste" label="outlined" />
         </GridItem>
         <GridItem md={4}>
-          <WInput variant="filled" label="filled" />
+          <WInput name="teste" variant="filled" label="filled" />
         </GridItem>
         <GridItem md={4}>
-          <WInput variant="standard" label="standard" />
+          <WInput name="teste" variant="standard" label="standard" />
         </GridItem>
         <GridItem md={4}>
-          <WInput size="medium" label="outlined" />
+          <WInput name="teste" size="medium" label="outlined" />
         </GridItem>
         <GridItem md={4}>
-          <WInput variant="filled" size="medium" label="filled" />
+          <WInput name="teste" variant="filled" size="medium" label="filled" />
         </GridItem>
         <GridItem md={4}>
-          <WInput variant="standard" size="medium" label="standard" />
+          <WInput
+            name="teste"
+            variant="standard"
+            size="medium"
+            label="standard"
+          />
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={4}>
-          <WInputPassword label="Password" />
+          <WInputPassword name="teste" label="Password" />
         </GridItem>
         <GridItem md={4}>
           <WInputIcon label="Icon" icon={<Home />} position="end" />
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={3}>
           <WInputMask label="cfp" typeInput="cpf" />
         </GridItem>
@@ -175,7 +181,7 @@ export default function states() {
           <WInputMask label="phone" typeInput="phone" />
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ mb: "1rem" }}>
+      <GridContainer sx={{ mb: '1rem' }}>
         <GridItem md={4}>
           <WInputCurrency label="currency" />
         </GridItem>

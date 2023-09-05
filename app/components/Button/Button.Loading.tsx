@@ -1,33 +1,22 @@
-"use client";
-import React from "react";
-import { LoadingButton, LoadingButtonProps } from "@mui/lab";
-import { Save } from "@mui/icons-material";
-
+'use client';
+import React from 'react';
+import { LoadingButton, LoadingButtonProps } from '@mui/lab';
 export interface WButtonProps extends LoadingButtonProps {
-  variant?: "contained" | "outlined" | "text";
+  variant?: 'contained' | 'outlined' | 'text';
   textButton: string;
-  color: "error" | "info" | "warning" | "primary" | "secondary" | "success";
-  position: "start" | "end" | "center";
-  loading: boolean;
+  color: 'error' | 'info' | 'warning' | 'primary' | 'secondary' | 'success';
+  position: 'start' | 'end' | 'center';
 }
 
 export function WLoadingButton({
-  variant = "contained",
+  variant = 'contained',
   textButton,
   color,
   position,
-  loading,
   ...rest
 }: WButtonProps) {
   return (
-    <LoadingButton
-      color={color}
-      variant={variant}
-      {...rest}
-      loading={loading}
-      loadingPosition={position}
-      endIcon={<Save />}
-    >
+    <LoadingButton color={color} variant={variant} {...rest}>
       {textButton}
     </LoadingButton>
   );
